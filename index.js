@@ -22,8 +22,7 @@ function getData(url){
 getData('https://randomuser.me/api')
 
     .then( function(resolve){
-        let JSONText = JSON.parse(resolve);
-        console.log(JSONText.results[0])
+        let JSONText = JSON.parse(resolve);        
         let name = `${JSONText.results[0].name.first} ${JSONText.results[0].name.last}`; 
         let imageSRC = JSONText.results[0].picture.large; 
         let nameTag = document.createElement('h1');
@@ -36,5 +35,5 @@ getData('https://randomuser.me/api')
         document.body.appendChild(imageElemet);
     })
     .catch((error) =>{
-        console.log(error);
+        alert(error);
     })
